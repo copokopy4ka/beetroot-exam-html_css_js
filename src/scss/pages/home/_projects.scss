@@ -1,0 +1,238 @@
+.projects {
+    padding: 100px 0 125px;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+
+    &__title-holder {
+        font-family: $gotham-Bold1;
+        font-size: 44px;
+        text-transform: uppercase;
+        color: $text-dark;
+        padding: 40px 0 0;
+        text-align: center;
+        position: relative;
+        margin: 0 0 100px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            width: 100px;
+            background-color: $text-dark;
+            border: none;
+
+            @include breakpoint($tablet) {
+                width: 80px;
+            }
+        }
+
+        @include breakpoint($tablet) {
+            font-size: 32px;
+            padding: 25px 0 0;
+        }
+    }
+
+    &__projects__row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 70px 0;
+
+        @include breakpoint($tablet) {
+            padding: 40px 0;
+        }
+
+        &:nth-child(2n + 2) {
+            flex-direction: row-reverse;
+            .projects__item-img {
+                padding: 0 0 0 35px;
+
+                &::before {
+                    content: '';
+                    width: 630px;
+                    height: 470px;
+                    position: absolute;
+                    background-color: #7e5aff;
+                    top: -70px;
+                    left: 30%;
+                    z-index: 5;
+
+                    @include breakpoint($tablet) {
+                        width: 315px;
+                        height: 235px;
+                        top: -35px;
+                        left: 15%;
+                    }
+                }
+
+                @include breakpoint($laptop) {
+                    padding: 0;
+                }
+            }
+
+            .projects__item-content {
+                padding: 0 35px 65px 0;
+            }
+
+            @include breakpoint($laptop) {
+                flex-direction: column;
+            }
+        }
+
+        @include breakpoint($laptop) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__item-img {
+        max-width: 630px;
+        width: 100%;
+        height: 470px;
+        padding: 0 35px 0 0;
+        position: relative;
+
+        & img {
+            max-width: 100%;
+            width: 100%;
+            max-height: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 6;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        &::before {
+            content: '';
+            width: 630px;
+            height: 470px;
+            position: absolute;
+            background-color: #55b7ff;
+            top: -70px;
+            left: -30%;
+            z-index: 5;
+
+            @include breakpoint($tablet) {
+                width: 315px;
+                height: 235px;
+                top: -35px;
+                left: -15%;
+            }
+        }
+
+        @include breakpoint($laptop) {
+            margin: 0 0 50px;
+            padding: 0;
+        }
+
+        @include breakpoint($tablet) {
+            max-width: 315px;
+            width: 100%;
+            height: 235px;
+        }
+    }
+
+    &__item-content {
+        width: 50%;
+        padding: 0 0 65px 35px;
+
+        @include breakpoint($tablet) {
+            padding: 25px 0;
+            width: 80%;
+            text-align: center;
+        }
+    }
+
+    &__item-title-holder {
+        margin: 0 0 40px;
+
+        @include breakpoint($tablet) {
+            margin: 0 0 20px;
+        }
+    }
+
+    &__item-subtitle {
+        font-size: 16px;
+        color: $text-dark;
+        margin: 0 0 15px;
+        text-transform: uppercase;
+
+        @include breakpoint($tablet) {
+            font-size: 15px;
+        }
+
+        @include breakpoint($mobile) {
+            font-size: 14px;
+        }
+    }
+
+    &__item-title {
+        font-size: 30px;
+        font-family: $gotham-Bold1;
+        color: $text-dark;
+        text-transform: uppercase;
+
+        @include breakpoint($tablet) {
+            font-size: 26px;
+        }
+
+        @include breakpoint($mobile) {
+            font-size: 22px;
+        }
+    }
+    
+
+    &__item-text {
+        font-family: 'Open Sans';
+        color: $text-gray;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0 0 35px;
+
+        @include breakpoint($tablet) {
+            font-size: 16px;
+            line-height: 25px;
+            margin: 0 0 25px;
+        }
+
+        @include breakpoint($mobile) {
+            font-size: 15px;
+            line-height: 22px;
+            margin: 0 0 15px;
+        }
+        
+        
+        & p {
+            overflow: hidden;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-clamp: 3;
+            box-orient: vertical;
+        }
+    }
+
+    &__item-address {
+        display: block;
+        font-family: 'Open Sans';
+        font-style: italic;
+        color: $text-dark;
+        font-size: 16px;
+
+        @include breakpoint($tablet) {
+            font-size: 14;
+        }
+    }
+}

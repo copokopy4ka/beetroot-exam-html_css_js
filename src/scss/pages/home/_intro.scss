@@ -1,0 +1,127 @@
+.intro {
+    position: relative;
+
+    &__slider-item {
+        min-height: 100vh;
+        background: url('../img/intro/intro-bg.png'), linear-gradient(45deg, #55b7ff 0%, #7d59ff 100%);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    &__title-holder {
+        text-align: center;
+
+        @include breakpoint($tablet) {
+            max-width: 85%;
+        }
+    }
+
+    &__title {
+        font-size: 80px;
+        color: $white;
+        font-family: $gotham-Bold1;
+        text-transform: uppercase;
+        margin: 0 0 40px;
+
+        @include breakpoint($laptop) {
+            font-size: 58px;
+        }
+
+        @include breakpoint($tablet) {
+            font-size: 34px;
+            margin: 0 0 30px;
+        }
+
+        @include breakpoint($mobile) {
+            font-size: 26px;
+            margin: 0 0 20px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        letter-spacing: 5px;
+        color: $white;
+        text-transform: uppercase;
+
+        @include breakpoint($tablet) {
+            font-size: 16px;
+            letter-spacing: 3px;
+        }
+
+        @include breakpoint($mobile) {
+            font-size: 14px;
+            letter-spacing: 0;
+        }
+    }
+
+    &__scroll {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $white;
+        color: $white;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: box-shadow .2s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 0 15px 2px rgba(255, 255, 255, .3);
+        }
+    }
+
+    &__slider.slick-vertical .slick-slide {
+        border: none;
+    }
+
+    .slick-dots {
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%);
+
+        & li button{
+            font-size: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid $white;
+            background-color: transparent;
+            transition: background-color .2s linear;
+
+            &:hover,
+            &:focus {
+                background-color: $white;
+            }
+        }
+
+        & li.slick-active button {
+            background-color: $white;
+        }
+
+        @include breakpoint($laptop) {
+            right: 30px;
+        }
+
+        @include breakpoint($tablet) {
+            right: 20px;
+        }
+
+        @include breakpoint($mobile) {
+            right: 10px;
+        }
+    }
+}

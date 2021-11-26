@@ -1,0 +1,280 @@
+.footer {
+    padding: 200px 0;
+    background: url('../img/footer/footer-bg.png'), linear-gradient(45deg, #55b7ff 0%, #7d59ff 100%);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    @include breakpoint ($tablet) {
+        padding: 150px 0;
+    }
+
+    @include breakpoint ($mobile) {
+        padding: 130px 0;
+    }
+
+    .container {
+        max-width: 770px;
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 40px;
+
+        @include breakpoint ($mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__logo {
+        max-width: 230px;
+
+        @include breakpoint ($mobile) {
+            margin: 0 0 30px;
+        }
+    }
+
+    &__social-list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__social-item {
+        margin: 0 20px 0 0;
+        
+        &:last-child {
+            margin: 0;
+        }
+
+        @include breakpoint ($laptop) {
+            margin: 0 10px 0 0;
+        }
+    }
+
+    &__social-link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid $white;
+        transition: background-color .2s ease-in-out;
+
+        & i {
+            color: $white;
+            font-size: 15px;
+            transition: color .2s ease-in-out;
+        }
+
+        &:hover {
+            background-color: $white;
+        }
+
+        &:hover i {
+            color: #7d59ff;
+        }
+    }
+
+    &__copyright, &__with-love {
+        color: $white;
+        display: inline-block;
+        padding: 5px 20px 5px 0;
+        transition: opacity .2s linear;
+        font-size: 14px;
+
+        &:hover {
+            opacity: .6;
+        }
+
+        @media screen and (max-width: 600px) {
+            padding: 10px 0;
+            display: block;
+            text-align: center;
+        }
+
+        @include breakpoint ($mobile) {
+            font-size: 12px;
+        }
+    }
+
+    &__with-love {
+        padding: 5px 20px;
+        border-left: 1px solid $white;
+
+        @media screen and (max-width: 600px) {
+            padding: 10px 0;
+            border: 0;
+        }
+
+        i {
+            transition: all .5s linear;
+        }
+
+        &:hover i {
+            color: rgb(255, 64, 0);
+            opacity: 1;
+        }
+    }
+
+    &__contacts {
+        max-width: 800px;
+        width: 100%;
+        padding: 50px 50px 70px;
+        background: url('../img/footer/contacts/contacts-bg.png'), #fff;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 50%;
+        top: -66%;
+        transform: translateX(-50%);
+
+        @include breakpoint ($laptop) {
+            padding: 20px 20px 50px;
+        }
+
+        @include breakpoint ($mobile) {
+            padding: 10px 10px 30px;
+        }
+    }
+
+    &__contacts-title-holder {
+        padding: 30px 0 0;
+        text-align: center;
+        font-family: $gotham-Medium;
+        text-transform: uppercase;
+        color: $text-dark;
+        font-size: 44px;
+        position: relative;
+        margin: 0 0 60px;
+
+        @include breakpoint ($laptop) {
+            margin: 0 0 40px;
+            font-size: 36px;
+        }
+
+        @include breakpoint ($mobile) {
+            margin: 0 0 30px;
+            font-size: 28px;
+        }
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            width: 100px;
+            background-color: $text-dark;
+
+            @include breakpoint ($laptop) {
+                width: 80px;
+            }
+    
+            @include breakpoint ($mobile) {
+                width: 65px;
+            }
+        }
+    }
+
+    &__contacts-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__contacts-col {
+        width: 50%;
+        padding: 0 40px 0 0;
+
+        @include breakpoint ($laptop) {
+            padding: 30px;
+        }
+
+        @include breakpoint ($mobile) {
+            padding: 20px;
+        }
+
+        & span, & a {
+            font-size: 16px;
+            color: $text-dark;
+            display: block;
+            margin: 0 0 45px;
+
+            @include breakpoint ($laptop) {
+                margin: 0 0 30px;
+            }
+    
+            @include breakpoint ($mobile) {
+                margin: 0 0 15px;
+            }
+
+            & i {
+                color: #7e5aff;
+            }
+        }
+
+        & span:last-child {
+            margin: 0;
+        }
+
+        &:last-child {
+            padding: 0 0 0 40px;
+
+            @include breakpoint ($laptop) {
+                padding: 0 0 0 30px;
+            }
+    
+            @include breakpoint ($mobile) {
+                padding: 0 0 0 20px;
+            }
+        }
+    }
+
+    &__input {
+        display: block;
+        border-bottom: 1px solid $text-gray;
+        width: 100%;
+        font-size: 18px;
+        color: $text-dark;
+        padding: 0 0 20px;
+        margin: 0 0 40px;
+        transition: border .2c linear;
+
+        @include breakpoint ($laptop) {
+            font-size: 16px;
+            padding: 0 0 15px;
+            margin: 0 0 30px;
+        }
+
+        @include breakpoint ($mobile) {
+            font-size: 14px;
+            padding: 0 0 10px;
+            margin: 0 0 20px;
+        }
+
+        &:last-child {
+            margin: 0 0 30px;
+
+            @include breakpoint ($mobile) {
+                margin: 0 0 150px;
+            }
+        }
+
+        &::placeholder {
+            opacity: .7;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+
+        &:focus {
+            border-bottom: 1px solid $text-gray;
+        }
+    }
+}

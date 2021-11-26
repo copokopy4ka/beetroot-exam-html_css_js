@@ -1,0 +1,198 @@
+.news {
+    padding: 140px 0;
+    background: url('../img/news/news-bg.png'), linear-gradient(45deg, #3b7fd3 0%, #23cbf9 100%);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+
+    &__title-holder {
+        text-align: center;
+        padding: 45px 0 0;
+        margin: 0 0 100px;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            width: 100px;
+            background-color: $white;
+            border: none;
+        }
+    }
+
+    &__title {
+        font-size: 44px;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    &__slider-wrapper {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    &__slider-item {
+        width: calc(100% / 3);
+        padding: 0 15px;
+    }
+
+    &__slider-item-holder {
+        max-width: 370px;
+        background-color: $white;
+    }
+
+    &__slider-img {
+        width: 100%;
+        overflow: hidden;
+
+        & img {
+            object-fit: cover;
+            height: 240px;
+        }
+    }
+
+    &__slider-item-content {
+        padding: 30px 20px;
+    }
+
+    &__slider-title {
+        font-size: 22px;
+        line-height: 34px;
+        color: $text-dark;
+        font-family: $gotham-Bold1;
+        margin: 0 0 20px;
+    }
+
+    &__slider-text {
+        font-size: 18px;
+        line-height: 30px;
+        color: $text-gray;
+        font-family: "Open Sans";
+        margin: 0 0 40px;
+
+        & p {
+            overflow: hidden;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-clamp: 2;
+            box-orient: vertical;
+        }
+    }
+
+    &__slider-creator {
+        display: flex;
+        align-items: center;
+    }
+
+    &__slider-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 20px 0 0;
+    }
+
+    &__slider-creator-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__slider-creator-name {
+        display: block;
+        padding: 10px 0 0;
+        font-size: 18px;
+        color: $text-dark;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+    }
+
+    &__slider-creator-date {
+        display: block;
+        font-size: 14px;
+        color: $text-blue;
+    }
+
+    &__slider.slick-slider {
+        padding: 60px 0;
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+
+        & li button{
+            font-size: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid $white;
+            background-color: transparent;
+            transition: background-color .2s linear;
+            margin: 0 40px 0 0;
+
+            &:hover,
+            &:focus {
+                background-color: $white;
+            }
+        }
+
+        & li:last-child {
+            margin: 0;
+        }
+
+        & li.slick-active button {
+            background-color: $white;
+        }
+    }
+
+    &__btn {
+        font-size: 0;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $white;
+        border-radius: 50%;
+        display: flex;
+        background-color: transparent;
+        padding: 15px 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: box-shadow .2s ease-in-out;
+
+        @media screen and (max-width: 1201px) {
+            display: none;
+            visibility: hidden;
+        }
+
+        &:hover {
+            box-shadow: 0 0 15px 2px rgb(255 255 255 / 30%);
+        }
+
+        &_prev {
+            left: -50px;
+        }
+
+        &_next {
+            right: -50px;
+        }
+
+        & i {
+            font-size: 10px;
+            color: $white;
+        }
+    }
+}
